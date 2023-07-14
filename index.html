@@ -9,17 +9,23 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
     }
 
     header {
-      background-color: #333;
+      background-color: #000;
       color: #fff;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
 
     h1 {
       margin: 0;
+      font-size: 28px;
     }
 
     nav ul {
@@ -37,8 +43,14 @@
       color: #fff;
       text-decoration: none;
       padding: 10px;
-      background-color: #666;
-      border-radius: 5px;
+      background-color: #444;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #333;
     }
 
     section {
@@ -51,10 +63,11 @@
     }
 
     footer {
-      background-color: #333;
+      background-color: #000;
       color: #fff;
       padding: 20px;
       text-align: center;
+      font-size: 14px;
     }
 
     .form-container {
@@ -63,22 +76,90 @@
     }
 
     .form-container input[type="text"],
+    .form-container input[type="email"],
     .form-container textarea {
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
-      border: 1px solid #ccc;
+      border: none;
       border-radius: 4px;
       box-sizing: border-box;
+      background-color: #fff;
+      color: #333;
+    }
+
+    .form-container textarea {
+      resize: none;
     }
 
     .form-container button {
-      background-color: #666;
+      background-color: #444;
       color: #fff;
       padding: 10px 20px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #333;
+    }
+
+    .product {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    .product p {
+      margin-bottom: 0;
+    }
+
+    .product a {
+      display: inline-block;
+      padding: 8px 20px;
+      margin-top: 10px;
+      background-color: #444;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .product a:hover {
+      background-color: #333;
+    }
+
+    .highlight {
+      background-color: #ffcc00;
+      color: #333;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
     }
   </style>
 </head>
@@ -90,6 +171,7 @@
         <li><a href="#" onclick="showSection('desktops')">Mostrar Desktop</a></li>
         <li><a href="#" onclick="showSection('notebooks')">Mostrar Notebook</a></li>
         <li><a href="#" onclick="showSection('contato')">Mostrar Contato</a></li>
+        <li><a href="#" onclick="showSection('termos')">Termos de Privacidade</a></li>
       </ul>
     </nav>
   </header>
@@ -99,14 +181,14 @@
     <div class="product">
       <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/products/desktops-and-all-in-ones/optiplex/7000-tsff/media-gallery/optiplex-7000sff-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&hei=402&wid=402&qlt=100,1&resMode=sharp2&size=402,402&chrss=full" alt="Desktop 1">
       <h3>Desktop 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Seu desktop pronto para fazer a melhor função!</p>
       <a href="#">Comprar</a>
     </div>
 
     <div class="product">
       <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/page-specific/category-pages/aio-desktop-inspiron-24-5420-desktop-3020-rf-800x620.png?fmt=png-alpha&wid=800&hei=620" alt="Desktop 2">
       <h3>Desktop 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Ultilize o que há de melhor na tecnologia, dando mais eficiência ao seu trabalho!</p>
       <a href="#">Comprar</a>
     </div>
   </section>
@@ -116,14 +198,14 @@
     <div class="product">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT13ugiT2YI43-1H33cdci1d7P-ZVzi3ui8Og&usqp=CAU" alt="Notebook 1">
       <h3>Notebook 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Pronto para suas tarefas diárias com leveza.</p>
       <a href="#">Comprar</a>
     </div>
 
     <div class="product">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPJreGQB0oneQHVA7M2WqNcZEUpARvveYkQ&usqp=CAU" alt="Notebook 2">
       <h3>Notebook 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Use o novo, e seja feliz!</p>
       <a href="#">Comprar</a>
     </div>
   </section>
@@ -139,6 +221,12 @@
         <button type="submit">Enviar</button>
       </form>
     </div>
+  </section>
+
+  <section id="termos">
+    <h2>Termos de Privacidade</h2>
+    <p>Aqui estão os termos de privacidade da nossa loja.</p>
+    <p>Consulte nossa <a href="termos-de-privacidade.html">Política de Privacidade completa</a> para mais informações.</p>
   </section>
 
   <footer>
