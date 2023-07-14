@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loja de Computadores</title>
+  <style>
+    /* Estilos CSS aqui */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+      background-color: #666;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 50px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Loja de Computadores</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('desktops')">Mostrar Desktop</a></li>
+        <li><a href="#" onclick="showSection('notebooks')">Mostrar Notebook</a></li>
+        <li><a href="#" onclick="showSection('contato')">Mostrar Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="desktops" class="active">
+    <h2>Desktops</h2>
+    <div class="product">
+      <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/products/desktops-and-all-in-ones/optiplex/7000-tsff/media-gallery/optiplex-7000sff-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&hei=402&wid=402&qlt=100,1&resMode=sharp2&size=402,402&chrss=full" alt="Desktop 1">
+      <h3>Desktop 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/page-specific/category-pages/aio-desktop-inspiron-24-5420-desktop-3020-rf-800x620.png?fmt=png-alpha&wid=800&hei=620" alt="Desktop 2">
+      <h3>Desktop 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#">Comprar</a>
+    </div>
+  </section>
+
+  <section id="notebooks">
+    <h2>Notebooks</h2>
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT13ugiT2YI43-1H33cdci1d7P-ZVzi3ui8Og&usqp=CAU" alt="Notebook 1">
+      <h3>Notebook 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNPJreGQB0oneQHVA7M2WqNcZEUpARvveYkQ&usqp=CAU" alt="Notebook 2">
+      <h3>Notebook 2</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a href="#">Comprar</a>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato conosco para mais informações.</p>
+    <form>
+      <input type="email" placeholder="Seu e-mail" required>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Loja de Computadores. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        section.classList.remove('active');
+      });
+
+      const selectedSection = document.getElementById(sectionId);
+      selectedSection.classList.add('active');
+    }
+  </script>
+</body>
+</html>
